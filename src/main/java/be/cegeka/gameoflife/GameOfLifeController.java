@@ -1,5 +1,6 @@
 package be.cegeka.gameoflife;
 
+import org.apache.commons.lang3.NotImplementedException;
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,9 +19,9 @@ public class GameOfLifeController {
 
     @RequestMapping(value = "/world", method = POST)
     @ResponseBody
-    public List<List<Boolean>> getWorld(@RequestBody List<List<Boolean>> currentWorld){
-        //logger.info(currentWorld);
-        return currentWorld;
+    public List<List<Boolean>> getNextGeneration(@RequestBody List<List<Boolean>> currentGeneration){
+        // return Generation.from(currentGeneration).getNextGeneration().getAsBooleans();
+        throw new NotImplementedException("Not implemented yet");
     }
 
 }

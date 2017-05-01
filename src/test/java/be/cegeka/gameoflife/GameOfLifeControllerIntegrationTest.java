@@ -40,11 +40,11 @@ public class GameOfLifeControllerIntegrationTest {
 
     @Test
     public void testGetApplicationName_ShouldReturnApplicationName() throws Exception {
-        List<List<Boolean>> world = Collections.emptyList();
+        List<List<Boolean>> generation = Collections.emptyList();
         mockMvc.perform(
                 post("/gameoflife/world")
                     .contentType(MediaType.APPLICATION_JSON)
-                    .content(world.toString())
+                    .content(generation.toString())
             )
             .andExpect(status().isOk());
     }

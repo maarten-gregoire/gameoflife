@@ -12,14 +12,22 @@ public class CellRow {
     public static CellRow from (List<Boolean> cellValues) {
         CellRow cellRow = aCellRow();
         cellValues.forEach(cellValue -> cellRow.cells.add(Cell.from(cellValue)));
-        return cellRow;
-    }
 
-    public List<Cell> getCells() {
-        return cells;
+        return cellRow;
     }
 
     private static  CellRow aCellRow(){
         return new CellRow();
+    }
+
+    public List<Boolean> getAsBooleans() {
+        List<Boolean> booleans = new ArrayList<Boolean>();
+        cells.forEach(cell -> booleans.add(cell.isAlive()));
+
+        return booleans;
+    }
+
+    public List<Cell> getCells() {
+        return cells;
     }
 }
