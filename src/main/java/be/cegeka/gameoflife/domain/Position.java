@@ -2,19 +2,19 @@ package be.cegeka.gameoflife.domain;
 
 public class Position {
 
-    private final int xPosition;
-    private final int yPosition;
+    private final int x;
+    private final int y;
 
-    public Position(int xPosition, int yPosition) {
-        this.xPosition = xPosition;
-        this.yPosition = yPosition;
+    public Position(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
-    public int getxPosition() {
-        return xPosition;
+    public int getX() {
+        return x;
     }
 
-    public int getyPosition() {
-        return yPosition;
+    public int getY() {
+        return y;
     }
 }
