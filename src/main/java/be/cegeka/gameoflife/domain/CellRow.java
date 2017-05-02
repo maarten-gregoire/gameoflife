@@ -1,4 +1,4 @@
-package be.cegeka.gameoflife;
+package be.cegeka.gameoflife.domain;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ public class CellRow {
         return cellRow;
     }
 
-    private static  CellRow aCellRow(){
+    private static CellRow aCellRow(){
         return new CellRow();
     }
 

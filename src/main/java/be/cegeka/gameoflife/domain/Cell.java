@@ -1,4 +1,7 @@
-package be.cegeka.gameoflife;
+package be.cegeka.gameoflife.domain;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Cell {
 
@@ -15,4 +18,5 @@ public class Cell {
     public boolean isAlive() {
         return alive;
     }
+
 }

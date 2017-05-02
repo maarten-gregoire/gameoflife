@@ -1,4 +1,4 @@
-package be.cegeka.gameoflife;
+package be.cegeka.gameoflife.controller;
 
 import be.cegeka.GameoflifeApplication;
 import org.junit.Before;

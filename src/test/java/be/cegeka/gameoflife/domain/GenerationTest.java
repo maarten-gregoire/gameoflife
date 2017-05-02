@@ -1,6 +1,7 @@
-package be.cegeka.gameoflife;
+package be.cegeka.gameoflife.domain;
 
-import org.junit.Assert;
+import be.cegeka.gameoflife.domain.Cell;
+import be.cegeka.gameoflife.domain.Generation;
 import org.junit.Test;
 
 import java.util.ArrayList;

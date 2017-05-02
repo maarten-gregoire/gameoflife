@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-/**
- * Created by fransg on 02/12/15.
- */
 public class StatusControllerTest {
 
     private StatusController statusController = new StatusController();

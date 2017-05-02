@@ -1,4 +1,4 @@
-package be.cegeka.gameoflife;
+package be.cegeka.gameoflife.domain;
 
 import org.junit.Test;
 
@@ -9,7 +9,6 @@ import static java.util.stream.Collectors.toList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
 
 public class CellRowTest {
 

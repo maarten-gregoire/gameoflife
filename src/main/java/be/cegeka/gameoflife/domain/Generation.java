@@ -1,4 +1,4 @@
-package be.cegeka.gameoflife;
+package be.cegeka.gameoflife.domain;
 
 import org.apache.commons.lang3.NotImplementedException;
 

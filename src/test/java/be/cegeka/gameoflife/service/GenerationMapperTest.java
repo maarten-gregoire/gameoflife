@@ -1,23 +1,27 @@
-package be.cegeka.gameoflife;
+package be.cegeka.gameoflife.service;
 
+import be.cegeka.gameoflife.domain.Generation;
+import be.cegeka.gameoflife.service.GenerationMapper;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.runners.MockitoJUnitRunner;
 
-import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
+@RunWith(MockitoJUnitRunner.class)
 public class GenerationMapperTest {
+
+    @InjectMocks
+    GenerationMapper generationMapper;
 
     @Test
     public void givenGeneration_whenMapToTwoDimensionalList_thenReturnTwoDimensionalList() {
         Generation generation = Generation.from(createTwodimenionalListWithAllCellValues(false));
-        GenerationMapper generationMapper = new GenerationMapper();
-
         List<List<Boolean>> twoDimensionalList = generationMapper.toTwoDimensionalList(generation);
         thenAllFalse(twoDimensionalList);
     }
