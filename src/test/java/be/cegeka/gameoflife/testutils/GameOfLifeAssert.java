@@ -2,6 +2,9 @@ package be.cegeka.gameoflife.testutils;
 
 import be.cegeka.gameoflife.domain.Cell;
 import org.assertj.core.api.AbstractIntegerAssert;
+import org.junit.Assert;
+
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertFalse;
@@ -19,5 +22,9 @@ public class GameOfLifeAssert{
 
     public static AbstractIntegerAssert<?> assertNumberOfNeighbors(Cell cell) {
         return assertThat(cell.getNumberOfNeighbors());
+    }
+
+    public static void assertAllElementsFalse(List<List<Boolean>> booleans) {
+        booleans.forEach(list -> list.forEach(Assert::assertFalse));
     }
 }

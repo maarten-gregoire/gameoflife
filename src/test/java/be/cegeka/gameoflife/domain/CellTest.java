@@ -24,7 +24,7 @@ public class CellTest {
 
         cell.addNeighbors(3);
         cell.addNeighbors(4);
-        
+
         assertNumberOfNeighbors(cell).isEqualTo(7);
     }
 }
