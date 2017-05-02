@@ -33,7 +33,7 @@ public class GameOfLifeAssert{
         return assertThat(cell.getNumberOfNeighbors());
     }
 
-    public static void assertAllElementsFalse(List<List<Boolean>> booleans) {
-        booleans.forEach(list -> list.forEach(Assert::assertFalse));
+    public static void assertAllElementsFalse(List<List<Boolean>> lists) {
+        lists.forEach(list -> list.forEach(Assert::assertFalse));
     }
 }

@@ -1,19 +1,15 @@
 package be.cegeka.gameoflife.service;
 
 import be.cegeka.gameoflife.domain.Generation;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import static be.cegeka.gameoflife.testutils.GameOfLifeAssert.assertAllElementsFalse;
-import static be.cegeka.gameoflife.testutils.GameOfLifeTestData.aTwoDimenionalListWithAllCellValues;
+import static be.cegeka.gameoflife.testutils.GameOfLifeTestData.aTwoDimenionalListWithAllElements;
 
 @RunWith(MockitoJUnitRunner.class)
 public class GenerationMapperTest {
@@ -23,7 +19,7 @@ public class GenerationMapperTest {
 
     @Test
     public void givenGeneration_whenMapToTwoDimensionalList_thenReturnTwoDimensionalList() {
-        Generation generation = Generation.from(aTwoDimenionalListWithAllCellValues(false));
+        Generation generation = Generation.from(aTwoDimenionalListWithAllElements(false));
         List<List<Boolean>> twoDimensionalList = generationMapper.toTwoDimensionalList(generation);
         assertAllElementsFalse(twoDimensionalList);
     }

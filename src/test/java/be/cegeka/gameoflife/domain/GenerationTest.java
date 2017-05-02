@@ -2,20 +2,18 @@ package be.cegeka.gameoflife.domain;
 
 import org.junit.Test;
 
-import java.util.*;
-
 import static be.cegeka.gameoflife.testutils.GameOfLifeAssert.*;
-import static be.cegeka.gameoflife.testutils.GameOfLifeTestData.aTwoDimenionalListWithAllCellValues;
+import static be.cegeka.gameoflife.testutils.GameOfLifeTestData.aTwoDimenionalListWithAllElements;
 
 public class GenerationTest {
 
     @Test
     public void givenTwodimenionalListWithAllCellValuesTrue_whenGenerationFromCellValues_thenAllCellsInGenerationAreAlive() {
-        assertAllAlive(Generation.from(aTwoDimenionalListWithAllCellValues(true)));
+        assertAllAlive(Generation.from(aTwoDimenionalListWithAllElements(true)));
     }
 
     @Test
     public void givenTwodimenionalListWithAllCellValuesFalse_whenGenerationFromCellValues_thenAllCellsInGenerationAreNotAlive() {
-        assertAllDead(Generation.from(aTwoDimenionalListWithAllCellValues(false)));
+        assertAllDead(Generation.from(aTwoDimenionalListWithAllElements(false)));
     }
 }
