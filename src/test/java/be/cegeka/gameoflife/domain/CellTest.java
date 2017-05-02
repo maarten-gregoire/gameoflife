@@ -43,10 +43,10 @@ public class CellTest {
     }
 
     @Test
-    public void givenCell_whenAddNeighbors_amountOfNeighborsIncreased() {
+    public void givenCell_whenAddNeighbors_totalNumberOfNeighborsIncreased() {
         Cell cell = Cell.from(true);
         cell.addNeighbors(3);
         cell.addNeighbors(4);
-        assertThat(cell.getAmountOfNeighbors()).isEqualTo(7);
+        assertThat(cell.getNumberOfNeighbors()).isEqualTo(7);
     }
 }

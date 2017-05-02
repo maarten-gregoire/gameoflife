@@ -29,7 +29,7 @@ public class GenerationMapperTest {
     private List<List<Boolean>> createTwodimenionalListWithAllCellValues(boolean cellValue) {
         List<List<Boolean>> listOfLists = new ArrayList<>();
         for (int i = 0; i < 10; i ++ ) {
-            List<Boolean> listOfBooleans = new ArrayList<Boolean>(Arrays.asList(new Boolean[10]));
+            List<Boolean> listOfBooleans = new ArrayList<>(Arrays.asList(new Boolean[10]));
             Collections.fill(listOfBooleans, cellValue);
             listOfLists.add(listOfBooleans);
         }

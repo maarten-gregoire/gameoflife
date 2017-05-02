@@ -1,7 +1,5 @@
 package be.cegeka.gameoflife.domain;
 
-import be.cegeka.gameoflife.domain.Cell;
-import be.cegeka.gameoflife.domain.Generation;
 import org.junit.Test;
 
 import java.util.ArrayList;
