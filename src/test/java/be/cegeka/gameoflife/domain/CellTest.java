@@ -21,8 +21,10 @@ public class CellTest {
     @Test
     public void givenCell_whenAddNeighbors_totalNumberOfNeighborsIncreased() {
         Cell cell = Cell.from(true);
+
         cell.addNeighbors(3);
         cell.addNeighbors(4);
+        
         assertNumberOfNeighbors(cell).isEqualTo(7);
     }
 }
