@@ -13,6 +13,7 @@ import java.util.Collections;
 import java.util.List;
 
 import static be.cegeka.gameoflife.testutils.GameOfLifeAssert.assertAllElementsFalse;
+import static be.cegeka.gameoflife.testutils.GameOfLifeTestData.aTwoDimenionalListWithAllCellValues;
 
 @RunWith(MockitoJUnitRunner.class)
 public class GenerationMapperTest {
@@ -22,19 +23,8 @@ public class GenerationMapperTest {
 
     @Test
     public void givenGeneration_whenMapToTwoDimensionalList_thenReturnTwoDimensionalList() {
-        Generation generation = Generation.from(aTwodimenionalListWithAllCellValues(false));
+        Generation generation = Generation.from(aTwoDimenionalListWithAllCellValues(false));
         List<List<Boolean>> twoDimensionalList = generationMapper.toTwoDimensionalList(generation);
         assertAllElementsFalse(twoDimensionalList);
     }
-
-    private List<List<Boolean>> aTwodimenionalListWithAllCellValues(boolean cellValue) {
-        List<List<Boolean>> listOfLists = new ArrayList<>();
-        for (int i = 0; i < 10; i ++ ) {
-            List<Boolean> listOfBooleans = new ArrayList<>(Arrays.asList(new Boolean[10]));
-            Collections.fill(listOfBooleans, cellValue);
-            listOfLists.add(listOfBooleans);
-        }
-        return listOfLists;
-    }
-
 }
