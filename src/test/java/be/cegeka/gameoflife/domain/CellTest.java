@@ -2,6 +2,7 @@ package be.cegeka.gameoflife.domain;
 
 import org.junit.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -39,5 +40,13 @@ public class CellTest {
 
     private boolean givenFalse() {
         return false;
+    }
+
+    @Test
+    public void givenCell_whenAddNeighbors_amountOfNeighborsIncreased() {
+        Cell cell = Cell.from(true);
+        cell.addNeighbors(3);
+        cell.addNeighbors(4);
+        assertThat(cell.getAmountOfNeighbors()).isEqualTo(7);
     }
 }

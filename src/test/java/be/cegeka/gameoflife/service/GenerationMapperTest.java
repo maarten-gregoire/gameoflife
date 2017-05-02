@@ -17,7 +17,7 @@ import java.util.List;
 public class GenerationMapperTest {
 
     @InjectMocks
-    GenerationMapper generationMapper;
+    private GenerationMapper generationMapper;
 
     @Test
     public void givenGeneration_whenMapToTwoDimensionalList_thenReturnTwoDimensionalList() {

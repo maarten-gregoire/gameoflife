@@ -1,11 +1,10 @@
 package be.cegeka.gameoflife.domain;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Cell {
 
     private boolean alive;
+
+    private int totalAmountOfNeighbors = 0;
 
     private Cell(boolean alive) {
         this.alive = alive;
@@ -19,4 +18,11 @@ public class Cell {
         return alive;
     }
 
+    public void addNeighbors(int amountOfNeighbors) {
+        this.totalAmountOfNeighbors += amountOfNeighbors;
+    }
+
+    public int getAmountOfNeighbors() {
+        return totalAmountOfNeighbors;
+    }
 }
