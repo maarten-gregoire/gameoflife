@@ -11,13 +11,11 @@ public class GenerationTest {
 
     @Test
     public void givenTwodimenionalListWithAllCellValuesTrue_whenGenerationFromCellValues_thenAllCellsInGenerationAreAlive() {
-        List<List<Boolean>> cellValues = aTwoDimenionalListWithAllCellValues(true);
-        assertAllAlive(Generation.from(cellValues));
+        assertAllAlive(Generation.from(aTwoDimenionalListWithAllCellValues(true)));
     }
 
     @Test
     public void givenTwodimenionalListWithAllCellValuesFalse_whenGenerationFromCellValues_thenAllCellsInGenerationAreNotAlive() {
-        List<List<Boolean>> cellValues = aTwoDimenionalListWithAllCellValues(false);
-        assertAllDead(Generation.from(cellValues));
+        assertAllDead(Generation.from(aTwoDimenionalListWithAllCellValues(false)));
     }
 }
