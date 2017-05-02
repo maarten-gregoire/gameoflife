@@ -20,7 +20,8 @@ public class GameOfLifeController {
     @RequestMapping(value = "/world", method = POST)
     @ResponseBody
     public List<List<Boolean>> getNextGeneration(@RequestBody List<List<Boolean>> currentGeneration){
-        // return Generation.from(currentGeneration).getNextGeneration().getAsBooleans();
+       // GenerationMapper generationMapper = new GenerationMapper();
+       //return generationMapper.toTwoDimensionalList(Generation.from(currentGeneration).getNextGeneration());
         throw new NotImplementedException("Not implemented yet");
     }
 

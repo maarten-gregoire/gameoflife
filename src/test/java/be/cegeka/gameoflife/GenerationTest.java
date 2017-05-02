@@ -51,25 +51,4 @@ public class GenerationTest {
         generationOfCells.forEach(row -> row.getCells().forEach(cell -> assertFalse(cell.isAlive())));
     }
 
-    @Test
-    public void givenGenerationWithAllCellsAlive_whenGetAsBooleans_thenAllBooleansAreTrue() {
-        Generation generation = Generation.from(createTwodimenionalListWithAllCellValues(true));
-        List<List<Boolean>> booleans = generation.getAsBooleans();
-        thenAllTrue(booleans);
-    }
-
-    private void thenAllTrue(List<List<Boolean>> booleans) {
-        booleans.forEach(list -> list.forEach(Assert::assertTrue));
-    }
-
-    @Test
-    public void givenGenerationWithAllCellsDead_whenGetAsBooleans_thenAllBooleansAreFalse() {
-        Generation generation = Generation.from(createTwodimenionalListWithAllCellValues(false));
-        List<List<Boolean>> booleans = generation.getAsBooleans();
-        thenAllFalse(booleans);
-    }
-
-    private void thenAllFalse(List<List<Boolean>> booleans) {
-        booleans.forEach(list -> list.forEach(Assert::assertFalse));
-    }
 }

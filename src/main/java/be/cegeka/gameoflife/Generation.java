@@ -21,13 +21,6 @@ public class Generation {
         return new Generation();
     }
 
-    public List<List<Boolean>> getAsBooleans() {
-        List<List<Boolean>> booleans = new ArrayList<List<Boolean>>();
-        cellRows.forEach(cellRow -> booleans.add(cellRow.getAsBooleans()));
-
-        return booleans;
-    }
-
     public List<CellRow> getCellRows() {
         return cellRows;
     }
@@ -35,4 +28,5 @@ public class Generation {
     public Generation getNextGeneration() {
         throw new NotImplementedException("Not implemented yet");
     }
+
 }
