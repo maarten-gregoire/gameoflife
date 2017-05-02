@@ -14,7 +14,7 @@ public class Cell {
         return new Cell(alive);
     }
 
-    public boolean isAlive() {
+    public Boolean isAlive() {
         return alive;
     }
 

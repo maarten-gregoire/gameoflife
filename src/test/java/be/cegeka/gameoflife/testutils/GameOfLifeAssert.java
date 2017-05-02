@@ -1,6 +1,7 @@
 package be.cegeka.gameoflife.testutils;
 
 import be.cegeka.gameoflife.domain.Cell;
+import be.cegeka.gameoflife.domain.Generation;
 import org.assertj.core.api.AbstractIntegerAssert;
 import org.junit.Assert;
 
@@ -18,6 +19,14 @@ public class GameOfLifeAssert{
 
     public static void assertDead(Cell cell) {
         assertFalse(cell.isAlive());
+    }
+
+    public static void assertAllAlive(Generation generation) {
+        generation.getCells().forEach(((position, cell) -> assertAlive(cell)));
+    }
+
+    public static void assertAllDead(Generation generation) {
+        generation.getCells().forEach(((position, cell) -> assertDead(cell)));
     }
 
     public static AbstractIntegerAssert<?> assertNumberOfNeighbors(Cell cell) {

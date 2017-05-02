@@ -2,36 +2,25 @@ package be.cegeka.gameoflife.domain;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static be.cegeka.gameoflife.testutils.GameOfLifeAssert.*;
 
 public class GenerationTest {
 
     @Test
     public void givenTwodimenionalListWithAllCellValuesTrue_whenGenerationFromCellValues_thenAllCellsInGenerationAreAlive() {
-        List<List<Boolean>> cellValues = createTwodimenionalListWithAllCellValues(true);
-        Generation generation = whenGenerationFrom(cellValues);
-        thenAllCellsInGenerationAreAlive(generation);
-    }
-
-    private void thenAllCellsInGenerationAreAlive(Generation generation) {
-        List<CellRow> generationOfCells = generation.getCellRows();
-        generationOfCells.forEach(row -> row.getCells().forEach(cell -> assertTrue(cell.isAlive())));
+        List<List<Boolean>> cellValues = twodimenionalListWithAllCellValues(true);
+        assertAllAlive(Generation.from(cellValues));
     }
 
     @Test
     public void givenTwodimenionalListWithAllCellValuesFalse_whenGenerationFromCellValues_thenAllCellsInGenerationAreNotAlive() {
-        List<List<Boolean>> cellValues = createTwodimenionalListWithAllCellValues(false);
-        Generation generation = whenGenerationFrom(cellValues);
-        thenAllCellsInGenerationAreNotAlive(generation);
+        List<List<Boolean>> cellValues = twodimenionalListWithAllCellValues(false);
+        assertAllDead(Generation.from(cellValues));
     }
 
-    private List<List<Boolean>> createTwodimenionalListWithAllCellValues(boolean cellValue) {
+    private List<List<Boolean>> twodimenionalListWithAllCellValues(boolean cellValue) {
         List<List<Boolean>> listOfLists = new ArrayList<>();
         for (int i = 0; i < 10; i ++ ) {
             List<Boolean> listOfBooleans = new ArrayList<Boolean>(Arrays.asList(new Boolean[10]));
@@ -40,14 +29,4 @@ public class GenerationTest {
         }
         return listOfLists;
     }
-
-    private Generation whenGenerationFrom(List<List<Boolean>> cellValues) {
-        return Generation.from(cellValues);
-    }
-
-    private void thenAllCellsInGenerationAreNotAlive(Generation generation) {
-        List<CellRow> generationOfCells = generation.getCellRows();
-        generationOfCells.forEach(row -> row.getCells().forEach(cell -> assertFalse(cell.isAlive())));
-    }
-
 }

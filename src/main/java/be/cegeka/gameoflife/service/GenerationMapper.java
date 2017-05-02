@@ -16,7 +16,7 @@ public class GenerationMapper {
 
     List<List<Boolean>> toTwoDimensionalList (Generation generation) {
         List<List<Boolean>> twoDimensionalList = new ArrayList<List<Boolean>>();
-        generation.getCellRows().forEach(cellRow -> twoDimensionalList.add(cellRow.getAsBooleans()));
+    //    generation.getCells().forEach((position, cell) -> twoDimensionalList.add(cell.isAlive()));
 
         return twoDimensionalList;
     }
