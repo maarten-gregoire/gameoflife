@@ -9,9 +9,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.List;
 
-import static be.cegeka.gameoflife.testutils.GameOfLifeAssert.assertAllAlive;
-import static be.cegeka.gameoflife.testutils.GameOfLifeAssert.assertAllElementsFalse;
-import static be.cegeka.gameoflife.testutils.GameOfLifeAssert.assertAllElementsTrue;
+import static be.cegeka.gameoflife.testutils.GameOfLifeAssert.*;
 import static be.cegeka.gameoflife.testutils.GameOfLifeTestData.aTwoDimensionalListWithAllElements;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -35,9 +33,16 @@ public class GenerationMapperTest {
     }
 
     @Test
-    public void givenTwoDimensionalList_whenMapToGeneration_thenReturnGeneration() {
+    public void givenTwoDimensionalListAllTrue_whenMapToGeneration_thenReturnGenerationAllCellsAlive() {
         List<List<Boolean>> twoDimensionalList = aTwoDimensionalListWithAllElements(true);
         Generation generation = generationMapper.toGeneration(twoDimensionalList);
         assertAllAlive(generation);
+    }
+
+    @Test
+    public void givenTwoDimensionalListAllFalse_whenMapToGeneration_thenReturnGenerationAllCellsDead() {
+        List<List<Boolean>> twoDimensionalList = aTwoDimensionalListWithAllElements(false);
+        Generation generation = generationMapper.toGeneration(twoDimensionalList);
+        assertAllDead(generation);
     }
 }

@@ -15,19 +15,14 @@ public class GenerationMapper {
 
     public Generation toGeneration (List<List<Boolean>> twoDimensionalList) {
         Generation generation = aGeneration();
-
-        addCellsFromTwoDimensionalListToGeneration(twoDimensionalList, generation);
-
-        return generation;
-    }
-
-    private void addCellsFromTwoDimensionalListToGeneration(List<List<Boolean>> twoDimensionalList, Generation generation) {
         twoDimensionalList.forEach(row ->
             row.forEach(element ->
                 generation.addCell(
                     findPosition(twoDimensionalList, row, element),
                     Cell.from(element)
                 )));
+
+        return generation;
     }
 
     private Position findPosition(List<List<Boolean>> twoDimensionalList, List<Boolean> row, Boolean element) {
