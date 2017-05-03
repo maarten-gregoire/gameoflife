@@ -9,15 +9,15 @@ import java.util.Map;
 public class Generation {
     private Map<Position, Cell> cells = new HashMap<>();
 
-    public static Generation from(List<List<Boolean>> cellValues) {
+    public static Generation from(List<List<Boolean>> twoDimensionalList) {
         Generation generation = aGeneration();
 
-        cellValues.forEach(row ->
-            row.forEach(cellValue ->
+        twoDimensionalList.forEach(row ->
+            row.forEach(element ->
                     generation.cells.put(
-                        new Position(cellValues.indexOf(row),
-                            row.indexOf(cellValue)),
-                        Cell.from(cellValue)
+                        new Position(twoDimensionalList.indexOf(row),
+                            row.indexOf(element)),
+                        Cell.from(element)
                     )));
 
         return generation;
