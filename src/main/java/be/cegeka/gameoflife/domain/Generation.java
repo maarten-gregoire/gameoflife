@@ -3,7 +3,6 @@ package be.cegeka.gameoflife.domain;
 import be.cegeka.gameoflife.service.GenerationMapper;
 import org.apache.commons.lang3.NotImplementedException;
 
-import javax.inject.Inject;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
