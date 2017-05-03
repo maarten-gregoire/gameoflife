@@ -17,7 +17,6 @@ public class GenerationTest {
         assertAlive(generation.getCellAtPosition(position));
     }
 
-    @Ignore // boooh
     @Test
     public void givenGenerationWithCells_whenGetCellAtPosition_thenReturnCellAtPosition() {
         Generation generation = Generation.from(aTwoDimensionalListWithAllElements(true));
