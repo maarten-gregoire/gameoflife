@@ -6,7 +6,6 @@ import be.cegeka.gameoflife.domain.Position;
 import org.apache.commons.lang3.NotImplementedException;
 
 import javax.inject.Named;
-import java.util.ArrayList;
 import java.util.List;
 
 import static be.cegeka.gameoflife.domain.Generation.aGeneration;
@@ -17,21 +16,30 @@ public class GenerationMapper {
     public Generation toGeneration (List<List<Boolean>> twoDimensionalList) {
         Generation generation = aGeneration();
 
-        twoDimensionalList.forEach(row ->
-            row.forEach(element ->
-                generation.addCell(
-                    new Position(twoDimensionalList.indexOf(row),
-                        row.indexOf(element)),
-                    Cell.from(element)
-                )));
+        addCellsFromTwoDimensionalListToGeneration(twoDimensionalList, generation);
 
         return generation;
     }
 
+    private void addCellsFromTwoDimensionalListToGeneration(List<List<Boolean>> twoDimensionalList, Generation generation) {
+        twoDimensionalList.forEach(row ->
+            row.forEach(element ->
+                generation.addCell(
+                    findPosition(twoDimensionalList, row, element),
+                    Cell.from(element)
+                )));
+    }
+
+    private Position findPosition(List<List<Boolean>> twoDimensionalList, List<Boolean> row, Boolean element) {
+        return new Position(twoDimensionalList.indexOf(row),
+            row.indexOf(element));
+    }
+
     public List<List<Boolean>> toTwoDimensionalList (Generation generation) {
-        List<List<Boolean>> twoDimensionalList = new ArrayList<List<Boolean>>();
+        throw new NotImplementedException("not implemented");
+//        List<List<Boolean>> twoDimensionalList = new ArrayList<List<Boolean>>();
     //    generation.getCells().forEach((position, cell) -> twoDimensionalList.add(cell.isAlive()));
 
-        return twoDimensionalList;
+  //      return twoDimensionalList;
     }
 }

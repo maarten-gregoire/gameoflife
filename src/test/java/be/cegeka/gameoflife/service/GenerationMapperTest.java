@@ -11,6 +11,7 @@ import java.util.List;
 
 import static be.cegeka.gameoflife.testutils.GameOfLifeAssert.assertAllAlive;
 import static be.cegeka.gameoflife.testutils.GameOfLifeAssert.assertAllElementsFalse;
+import static be.cegeka.gameoflife.testutils.GameOfLifeAssert.assertAllElementsTrue;
 import static be.cegeka.gameoflife.testutils.GameOfLifeTestData.aTwoDimensionalListWithAllElements;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -20,10 +21,17 @@ public class GenerationMapperTest {
     private GenerationMapper generationMapper;
 
     @Test
-    public void givenGeneration_whenMapToTwoDimensionalList_thenReturnTwoDimensionalList() {
+    public void givenGenerationAllDead_whenMapToTwoDimensionalList_thenReturnTwoDimensionalList() {
         Generation generation = Generation.from(aTwoDimensionalListWithAllElements(false));
         List<List<Boolean>> twoDimensionalList = generationMapper.toTwoDimensionalList(generation);
         assertAllElementsFalse(twoDimensionalList);
+    }
+
+    @Test
+    public void givenGenerationAllAlive_whenMapToTwoDimensionalList_thenReturnTwoDimensionalList() {
+        Generation generation = Generation.from(aTwoDimensionalListWithAllElements(true));
+        List<List<Boolean>> twoDimensionalList = generationMapper.toTwoDimensionalList(generation);
+        assertAllElementsTrue(twoDimensionalList);
     }
 
     @Test
